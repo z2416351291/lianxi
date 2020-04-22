@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fun(name){
+        //     name=name||"王二小";
+        //     console.log(name);
+        // }
+        // fun();
+        // fun("放牛娃");
+        //默认参数
+        // function fun1(name="小魔仙"){
+        //     console.log(name);
+        // }
+        // fun1();
+        // fun1("老魔仙");
+        //剩余参数
+        // function fun2(a,...reset){
+        //     console.log(a);
+        //     console.log(reset);
+        // }
+        // fun2(11);
+        // fun2(11,22,33,44,55,);
+        var arr=["哈哈","嘿嘿","嘻嘻","啦啦","吼吼"]
+        function fun3(a,b,c,d,e){
+            console.log(a,b,c,d,e);
+        }
+        fun3(arr[0],arr[1],arr[2],arr[3],arr,[4]);
+        fun3.apply(null,arr);
+        fun3.call(null,arr[0],arr[1],arr[2],arr[3],arr,[4]);
+        fun3(...arr);//参数的映射
+    </script>
+</body>
+</html>
