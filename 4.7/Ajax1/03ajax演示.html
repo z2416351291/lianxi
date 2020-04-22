@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="出来啊" />
+		<div id="content">
+			
+		</div>
+		<script type="text/javascript">
+			var btn=document.getElementById('btn');
+			var content=document.getElementById('content');
+			btn.onclick=function(){
+				//Ajax的一个固定的模板：
+				//第1步创建一个xhr对象，使用new关键来调用一个内置构造函数
+				var xhr = new XMLHttpRequest(); 
+				xhr.onreadystatechange=function(){
+					if (xhr.readyState==4) {
+						console.log(xhr.responseText);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

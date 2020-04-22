@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.wai {
+				width: 650px;
+				height: 400px;
+				margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.wai ul {
+				list-style: none;
+			}
+
+			.wai ul li {
+				display: none;
+			}
+
+			.wai ul li img {
+				width: 650px;
+				height: 400px;
+			}
+
+			.wai ul li.tu {
+				display: block;
+			}
+
+			.wai span {
+				height: 30px;
+				width: 30px;
+				position: absolute;
+				top: 180px;
+				cursor: pointer;
+			}
+
+			.zuo {
+				left: 10px;
+				/* background-color: #0000FF; */
+				background-image: url(img/zuo.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+
+			.you {
+				right: 10px;
+				/* background-color: #0000FF; */
+				background-image: url(img/you.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			.yuan {
+				position: absolute;
+				bottom: 10px;
+				width: 200px;
+				height: 20px;
+				left: 55%;
+				margin-left: -50px;
+			}
+
+			.yuan ol {
+				list-style: none;
+			}
+
+			.yuan ol li {
+				width: 10px;
+				height: 10px;
+				background-color: #999;
+				border-radius: 50%;
+				cursor: pointer;
+				margin-right: 10px;
+				float: left;
+			}
+
+			.yuan ol li.tu {
+				background-color: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wai">
+			<div id="imgs" class="imgs">
+				<ul>
+					<li class="tu">
+						<a href=""><img src="img/333.jpg"></a>
+					</li>
+					<li>
+						<a href=""><img src="img/444.jpg"></a>
+					</li>
+					<li>
+						<a href=""><img src="img/555.jpg"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="btn">
+				<span class="zuo" id="waizuo"></span>
+				<span class="you" id="waiyou"></span>
+			</div>
+			<div id="yuan" class="yuan">
+				<ol>
+					<li class="tu"></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var waizuo = document.getElementById('waizuo');
+			var waiyou = document.getElementById('waiyou');
+			var yuan = document.getElementById('yuan').getElementsByTagName('li');
+			var imgs = document.getElementById('imgs').getElementsByTagName('li');
+			var img_1 = 0;
+			waiyou.onclick = function() {
+				img_1++;
+				if (img_1 > 2) {
+					img_1 = 0;
+				}
+				dt();
+			}
+			waizuo.onclick = function() {
+				img_1--;
+				if (img_1 < 0) {
+					img_1 = 2;
+				}
+				dt();
+			}
+			for (var i = 0; yuan.length; i++) {
+				(function(m){
+					yuan[m].onmousemove = function() {
+						img_1 = m;
+						dt();
+					}
+				})(i)
+			}
+
+			function dt() {
+				for (var i = 0; i < imgs.length; i++) {
+					imgs[i].className = '';
+				}
+				imgs[img_1].className = 'tu';
+				for (var i = 0; i < yuan.length; i++) {
+					yuan[i].className = '';
+				}
+				yuan[img_1].className = 'tu';
+			}
+		</script>
+	</body>
+</html>

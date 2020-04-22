@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* function fun(){
+				alert("你好");
+			}
+			console.log(fun.prototype);
+			console.log(typeof fun.prototype); //object */
+			function people(){
+				this.name='小明';
+			}
+			people.prototype={
+				name:"小梦",
+				sex:"女",
+				age:18
+			}
+			//__proto__  原型链
+			var xiaoming = new people();
+			console.log(xiaoming);
+			console.log(xiaoming.__proto__);
+			console.log(xiaoming.__proto__===people.prototype);
+			console.log(xiaoming.name);
+			console.log(xiaoming.sex);
+			console.log(xiaoming.age);
+		</script>
+	</body>
+</html>

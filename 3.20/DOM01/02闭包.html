@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* var arr=[];
+			// 数组里面放三个函数，这三个函数都是匿名函数;
+			arr.push(function(){
+				alert("星期五");
+			})
+			arr.push(function(){
+				alert("嘻嘻");
+			})
+			arr.push(function(){
+				alert("哈哈");
+			})
+			arr.push(function(a,b){
+				alert(a+b);
+			})
+			arr[2]();
+			arr[3](2,5); */
+			/* var arr = [];
+			for(var i=0;i<=10;i++){
+				arr[i]=function(){
+					alert("hello");
+				}
+			}
+			// 循环语句执行完毕，arr里面就有11个函数，都会弹出hello
+			arr[4]()
+			arr[6]()
+			arr[8]() */
+			// 经典问题
+			/* var arr=[];
+			for(var i=0;i<=10;i++){
+				arr[i]=function(){
+					alert(i);//试着每个函数弹出自己的编号
+				}
+			}
+			arr[4]()//11
+			arr[6]()//11
+			arr[8]()//11 */
+			//解决办法01
+			// var 变 let
+			//解决办法02
+			var arr=[];
+			for(var i=0;i<=10;i++){
+				(function(m){
+					arr[m]=function(){
+						alert(m)
+					}
+				})(i)
+			}
+			arr[4]()//11
+			arr[6]()//11
+			arr[8]()//11
+		</script>
+	</body>
+</html>

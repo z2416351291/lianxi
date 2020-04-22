@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="" id="btn" value="点击" />
+		<script type="text/javascript" charset="utf-8">
+			function fun(obj){
+				console.log(obj.result[2].nianling);
+			}
+		</script>
+		<script type="text/javascript">
+			var btn=document.getElementById("btn");
+			btn.onclick=function(){
+				var scriptObj=document.createElement("script");
+				document.body.appendChild(scriptObj);
+				scriptObj.src="JSON.txt";
+			}
+		</script>
+	</body>
+</html>

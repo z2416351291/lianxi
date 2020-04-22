@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.carousel{
+				width: 650px;
+				height: 350px;
+				margin: 50px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			.carousel ul{
+				list-style: none;
+			}
+			.carousel ul li{
+				display: none;
+			}
+			.carousel ul li img{
+				width: 650px;
+				height: 350px;
+			}
+			.carousel ul li.current{
+				display: block;
+			}
+			.carousel span{
+				height: 50px;
+				width: 50px;
+				background-color: blue;
+				position: absolute;
+				top: 130px;
+				cursor: pointer;
+			}
+			.leftBtn{
+				left: 10px;
+			}
+			.rightBtn{
+				right: 10px;
+			}
+			.circles{
+				position: absolute;
+				bottom: 10px;
+				width: 200px;
+				height: 20px;
+				left: 47%;
+				margin-left: -50px;
+			}
+			.circles ol{
+				list-style: none;
+			}
+			.circles ol li{
+				width: 20px;
+				height: 20px;
+				background-color: gold;
+				border-radius: 50%;
+				cursor: pointer;
+				margin-right: 10px;
+				float: left;
+			}
+			.circles ol li.current{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="carousel">
+			<div id="imgesList" class="imgesList">
+				<ul>
+					<li class="current">
+						<a href=""><img src="img/111.jpg" ></a>
+					</li>
+					<li>
+						<a href=""><img src="img/222.jpg" ></a>
+					</li>
+					<li>
+						<a href=""><img src="img/333.jpg" ></a>
+					</li>
+				</ul>
+			</div>
+			<div class="btns">
+				<span class="leftBtn" id="carousel_leftBtn"></span>
+				<span class="rightBtn" id="carousel_rightBtn"></span>
+			</div>
+			<div id="circles" class="circles">
+				<ol>
+					<li class="current"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var carousel_leftBtn=document.getElementById('carousel_leftBtn');
+			var carousel_rightBtn=document.getElementById('carousel_rightBtn');
+			var circlesLis=document.getElementById('circles').getElementsByTagName('li');
+			var imgesList=document.getElementById('imgesList').getElementsByTagName('li');
+			var img_idx=0;
+			function changePic(){
+				for(var i=0;i<img_idx.length;i++){
+					imgesList[i].className='';
+				}
+				imgesList[img_idx].className='current';
+				
+			}
+		</script>
+	</body>
+</html>

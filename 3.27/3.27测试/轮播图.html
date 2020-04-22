@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			.wai{
+				height: 100px;
+				width: 340px;
+				border: 1px solid red;
+				margin: 100px auto;
+				position: relative;
+				line-height: 40px;
+				overflow: hidden;
+			}
+			li{
+				height: 100px;
+				width: 100px;
+				float: left;	
+			}
+			.a1{
+				background-color: red;
+				margin-left: 10px;
+			}
+			.a2{
+				background-color: blue;
+				margin-left: 10px;
+			}
+			div ul{
+				position: absolute;
+				top: 0;
+				left: 0;
+				list-style: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wai">
+			<ul>
+				<li class="a1"></li>
+				<li class="a1"></li>
+				<li class="a1"></li>
+				<li class="a2"></li>
+				<li class="a2"></li>
+				<li class="a2"></li>
+			</ul>
+		</div>
+		<script src="js/animate-2.0.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var ul=document.getElementsByTagName('ul')[0];
+			var li=document.getElementsByTagName('li');
+			var chang=li.length;
+			ul.innerHTML+=ul.innerHTML;
+			var a1=0;
+			function dong(){
+				a1++;
+				animate(ul,{'top':-100*a1},1000,function(){
+					if(a1>chang-5){
+						a1=0;
+						this.style.top='0px';
+					}
+				})
+			}
+			setInterval(dong,2000);
+		</script>
+	</body>
+</html>

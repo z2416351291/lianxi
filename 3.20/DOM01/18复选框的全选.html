@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<p><input type="checkbox"/>吃饭</p>
+			<p><input type="checkbox"/>睡觉</p>
+			<p><input type="checkbox"/>看B站</p>
+			<p><input type="checkbox"/>晒太阳</p>
+		</div>
+		<input type="button" value="全选" id="btn"/>
+		<script type="text/javascript">
+			var inputs=document.getElementById("box").getElementsByTagName("input");
+			var btn=document.getElementById("btn");
+			var state=0;//0表示都没有选，1代表全选
+			btn.onclick=function(){
+				state = state == 0 ? 1 : 0;
+				var str = state == 0 ? '' : "checked";
+				this.value = state == 0 ? "全选" : "全不选";
+				for(var i=0;i<inputs.length;i++){
+					inputs[i].checked=str;
+				}
+			}
+		</script>
+	</body>
+</html>

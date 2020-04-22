@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			input {
+				height: 25px;
+				width: 200px;
+				margin-top: 10px;
+				border-radius: 3px;
+				border: 1px solid #999;
+				outline: none;
+				text-indent: 0.5em;
+			}
+			button{
+				height: 25px;
+				width: 70px;
+				margin-top: 10px;
+				margin-left: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td><input type="text" name="" id="k1" value="" placeholder="请输入账号"/></td>
+			</tr>
+			<tr>
+				<td><input type="password" name="" id="k2" value="" placeholder="请输入密码"/></td>
+			</tr>
+		</table>
+		<button type="button" id="but">登陆</button>
+		<script type="text/javascript">
+			var a1 = document.getElementById("k1");
+			a1.onblur = function() {
+				var val=this.value;
+				if (val=='') {
+					this.style.borderColor = "red";
+					this.style.borderRadius = "3px";
+				} else{
+					this.style.borderColor = "#999";
+					this.style.borderRadius = "3px";
+				}
+			}
+			var a2 = document.getElementById("k2");
+			a2.onblur = function() {
+				var val=this.value;
+				if (val=='') {
+					this.style.borderColor = "red";
+					this.style.borderRadius = "3px";
+				} else{
+					this.style.borderColor = "#999";
+					this.style.borderRadius = "3px";
+				}
+			}
+			var b1 = document.getElementById("but");
+			b1.onclick = function(){
+				var val=a1.value;
+				var val1=a2.value;
+				if (val=="") {
+					alert("请输入账号");
+				} else if(val1==""){
+					alert("请输入密码");
+				}else{
+					alert("登陆成功");
+				}
+			}
+		</script>
+	</body>
+</html>

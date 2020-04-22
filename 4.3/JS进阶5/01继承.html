@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function people(name,age,sex){
+				this.name=name;
+				this.age=age;
+				this.sex=sex;
+			}
+			people.prototype.sayhello=function(){
+				alert('我是人，我的名字是'+this.name);
+			}
+			people.prototype.chifan=function(){
+				alert('好饿，该吃饭了');
+			}
+			function student(name,age,sex,xuehao,xiaohonghuageshu){
+				// console.log(people(this)); 
+				this.constructor.apply(this.arguments);
+				this.xuehao=xuehao;
+				this.xiaohonghuageshu=xiaohonghuageshu;
+			}
+			//核心语句，继承的实现就靠这条语句
+			student.prototype=people.prototype;
+			
+			student.prototype.sayhello=function(){
+				alert('我是学生，我的学号是'+this.xuehao);
+			}
+			student.prototype.study=function(){
+				alert('好好学习，天天向上');
+			}
+			student.prototype.lol=function(){
+				alert('喜欢玩LOL');
+			}
+			var xiaoming=new student('小明',18,'男',1234,31);
+			console.log(xiaoming);
+			xiaoming.chifan();
+			people.sayhello();
+		</script>
+	</body>
+</html>

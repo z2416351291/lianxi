@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj={
+				a:1,
+				b:2,
+				c:3,
+				d:false
+			}
+			Object.prototype.f=12;
+			obj.__proto__={
+				e:'xiaoming'
+			}
+			console.log(obj.hasOwnProperty('a'))
+			console.log(obj.hasOwnProperty('b'))
+			console.log(obj.hasOwnProperty('c'))
+			console.log(obj.hasOwnProperty('d'))
+			console.log(obj.hasOwnProperty('e'))
+			console.log(obj.hasOwnProperty('f'))
+		</script>
+	</body>
+</html>

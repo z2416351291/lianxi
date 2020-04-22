@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function dog(){
+				
+			}
+			function cat(){
+				
+			}
+			cat.prototype=new dog()
+			var hellokitty=new cat()
+			console.log(hellokitty.constructor);
+			console.log(hellokitty instanceof cat);
+			console.log(hellokitty instanceof dog); 
+			/* var arr=[];
+			console.log(typeof arr);
+			var obj={};
+			console.log(typeof obj);
+			var obj2=/ABC/g;
+			console.log(typeof obj2); */
+			
+		</script>
+	</body>
+</html>

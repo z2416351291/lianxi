@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>标题</title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<input type="text" name="ha" id="" value="" />
+		<script type="text/javascript">
+			/* //获取页面标题
+			alert(document.title);
+			//获取页面路径
+			alert(document.URL); */
+			var a1=document.getElementById('box');
+			a1.style.backgroundColor="red";
+			//name和id不能起一样的名字
+			var a2=document.getElementById('ha');
+			a2.style.backgroundColor="red";
+		</script>
+	</body>
+</html>

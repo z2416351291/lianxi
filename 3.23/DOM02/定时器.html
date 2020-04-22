@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				position: absolute;
+				top: 100px;
+				right: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="" id="" value="开始" />
+		<input type="button" name="" id="" value="暂停" />
+		<img src="img/dog.gif" >
+		<script type="text/javascript">
+			var dog=document.getElementsByTagName("img")[0];
+			var kaishi=document.getElementsByTagName("input")[0];
+			var zanting=document.getElementsByTagName("input")[1];
+			var nowright=100;
+			var timer;
+			kaishi.onclick=function(){
+				clearInterval(timer);
+				timer=setInterval(function(){
+					nowright+=2;
+					dog.style.right=nowright+"px";
+				},20)
+			}
+			zanting.onclick=function(){
+				clearInterval(timer);
+			}
+		</script>
+	</body>
+</html>

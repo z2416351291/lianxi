@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 60px;
+				height: 60px;
+				float: left;
+				margin-left: 20px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<script type="text/javascript">
+			var ps = document.getElementsByTagName("p");
+			for(var i=0;i<ps.length;i++){
+				ps[i].onclick=function(){
+					this.style.backgroundColor="blue";
+				}
+			}
+		</script>
+	</body>
+</html>
